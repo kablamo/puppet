@@ -1,7 +1,7 @@
 Puppet for kablamo
 ==================
 
-(Puppet)[http://docs.puppetlabs.com] does configuration management.  I use it
+[Puppet](http://docs.puppetlabs.com) does configuration management.  I use it
 to manage all the computers I use.  This project is allows me to install and
 configure all my stuffs whenever I get a new Ubuntu box to play with.
 
