@@ -1,3 +1,0 @@
-[submodule "modules/perlbrew"]
-	path = modules/perlbrew
-	url = git@github.com:rafl/puppet-module-perlbrew.git
