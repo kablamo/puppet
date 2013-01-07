@@ -1,1 +1,3 @@
-include kablamo
+node default {
+    include kablamo
+}
