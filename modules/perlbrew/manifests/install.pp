@@ -1,20 +1,19 @@
 class perlbrew::install {
     require perlbrew::params
 
-    package {
-      "build-essential": ensure => present;
-      "curl":            ensure => present;
-    }
-
     exec { $perlbrew::params::perlbrew_bin:
         command => "/usr/bin/curl -kL http://install.perlbrew.pl | /bin/bash",
+        user    => 'eric',
+        group   => 'eric',
         creates => $perlbrew::params::perlbrew_bin,
         require => [ Package["build-essential"], Package["curl"] ],
     }
 
     exec { "perlbrew_init":
-        command => "PERLBREW_ROOT=${perlbrew::params::perlbrew_root} ${perlbrew::params::perlbrew_bin} init'",
+        command => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::params::perlbrew_root} ${perlbrew::params::perlbrew_bin} init'",
+        user    => 'eric',
+        group   => 'eric',
         creates => "${perlbrew::params::perlbrew_root}/perls",
-        require => File[$perlbrew::params::perlbrew_bin],
+        require => Exec[$perlbrew::params::perlbrew_bin],
     }
 }
