@@ -1,5 +1,4 @@
 class kablamo::packages {
-    package { ack-grep:        ensure => latest }
     package { atop:            ensure => latest }
     package { build-essential: ensure => latest }
     package { curl:            ensure => latest }
