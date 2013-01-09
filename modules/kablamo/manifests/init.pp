@@ -1,7 +1,7 @@
 class kablamo {
-    include kablamo::packages
-    include kablamo::dotfiles
-    include kablamo::perl
+    class { 'packages': }
+    class { 'dotfiles': }
+    class { 'perl':     }
 
     #file { aliases:
     #  path    => '/home/eric/.aliases',
