@@ -10,7 +10,7 @@ How to use it
 
     sudo apt-get install puppet git libpath-class-perl
     git clone https://github.com/kablamo/puppet.git ~/.puppet
-    sudo puppet apply --modulepath=~/.puppet/modules ~/.puppet/manifests/site.pp
+    sudo puppet apply --modulepath=/home/eric/.puppet/modules ~/.puppet/manifests/site.pp
 
 
 What it does
