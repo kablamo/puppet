@@ -1,6 +1,8 @@
-class kablamo::perl ($version) {
+class kablamo::perl {
     require kablamo::packages
     require perlbrew
+
+    $version = 'perl-5.16.2'
 
     # packages needed to build modules
     package { 
@@ -8,7 +10,6 @@ class kablamo::perl ($version) {
         'zlib1g-dev':           ensure => present; # for gzip
         'libxml2-dev':          ensure => present; # for XML::Parser
         'libexpat1-dev':        ensure => present; # for XML::Parser
-        'libcurl4-openssl-dev': ensure => present; # AnyEvent::Curl::Multi
     }
 
     # install the perl
