@@ -1,20 +1,14 @@
 class kablamo::perl {
-    require kablamo::packages
-    require perlbrew
 
-    $version = 'perl-5.16.2'
-
-    # packages needed to build modules
-    package { 
-        'libssl-dev':           ensure => present; # for https
-        'zlib1g-dev':           ensure => present; # for gzip
-        'libxml2-dev':          ensure => present; # for XML::Parser
-        'libexpat1-dev':        ensure => present; # for XML::Parser
+    class { 'perlbrew': 
+        user          => 'eric', 
+        group         => 'eric',
+        perlbrew_root => "/home/eric/perl5/perlbrew",
     }
 
-    # install the perl
-    perlbrew::build { $version: version => $version }->
-
-    # install cpanm
+    $version = 'perl-5.16.2'
+    perlbrew::install_perl  { $version: version => $version }->
     perlbrew::install_cpanm { $version: version => $version }
+
+    # cpanm Task::BeLike::KABLAMO
 }
