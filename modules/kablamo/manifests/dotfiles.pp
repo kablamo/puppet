@@ -1,6 +1,4 @@
 class kablamo::dotfiles {
-    require kablamo::packages
-
     exec { clone-dotfiles:
         command => '/usr/bin/git clone https://github.com/kablamo/dotfiles.git /home/eric/code/dotfiles',
         user    => 'eric',
