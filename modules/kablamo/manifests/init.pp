@@ -1,7 +1,7 @@
 class kablamo {
     include kablamo::packages
     include kablamo::dotfiles
-    class { kablamo::perl: version => 'perl-5.16.2' }
+    include kablamo::perl
 
     #file { aliases:
     #  path    => '/home/eric/.aliases',
