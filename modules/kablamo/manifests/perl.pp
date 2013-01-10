@@ -6,7 +6,7 @@ class kablamo::perl {
         perlbrew_root => "/home/eric/perl5/perlbrew",
     }
 
-    $version = 'perl-5.16.2'
+    $version = '5.16.2'
     perlbrew::install_perl  { $version: version => $version }->
     perlbrew::install_cpanm { $version: version => $version }
 
