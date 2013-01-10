@@ -30,6 +30,17 @@ class perlbrew (
             creates => "${perlbrew_root}/perls/${version}",
         }
     }
+
+    define switch ($version) {
+        exec { "perlbrew_switch_${name}":
+            command => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew_root} ${perlbrew_bin} switch $version'",
+            timeout => 3600,
+            user    => $user,
+            group   => $group,
+            creates => "${perlbrew_root}/perls/${version}",
+            require => File["${perlbrew_root}/perls/${version}"],
+        }
+    }
   
     define install_cpanm ($version) {
         exec { "install_cpanm_${version}":
