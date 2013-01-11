@@ -3,7 +3,6 @@ class perlbrew (
     $group,
     $perlbrew_root,
     $perlbrew_bin  = "${perlbrew_root}/bin/perlbrew",
-    $cpanm_url     = "http://github.com/miyagawa/cpanminus/raw/master/cpanm",
 ) {
     exec { $perlbrew_bin:
         command => "/usr/bin/curl -kL http://install.perlbrew.pl | /bin/bash",
