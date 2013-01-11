@@ -23,22 +23,21 @@ class perlbrew (
 
     define install_perl ($version) {
         exec { "install_perl_${version}":
-            command => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew_root} ${perlbrew_bin} install ${version} --as ${version} -Accflags=-fPIC -Dcccdlflags=-fPIC'",
+            command => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} ${perlbrew::perlbrew_bin} install ${version} --as ${version} -Accflags=-fPIC -Dcccdlflags=-fPIC'",
             timeout => 3600,
             user    => $user,
             group   => $group,
-            creates => "${perlbrew_root}/perls/${version}",
+            creates => "${perlbrew::perlbrew_root}/perls/perl-${version}"
         }
     }
 
     define switch ($version) {
         exec { "perlbrew_switch_${name}":
-            command => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew_root} ${perlbrew_bin} switch $version'",
+            command => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} ${perlbrew::perlbrew_bin} switch $version'",
             timeout => 3600,
             user    => $user,
             group   => $group,
-            creates => "${perlbrew_root}/perls/${version}",
-            require => File["${perlbrew_root}/perls/${version}"],
+            require => File["${perlbrew::perlbrew_root}/perls/${version}"],
         }
     }
   
@@ -49,10 +48,10 @@ class perlbrew (
             # user/group options. That causes cpanm to use /root/.cpanm for it's
             # temporary storage, which happens to not be writable for the perlbrew
             # user. Use /bin/su to work this around.
-            command => "/bin/bash -c 'PERLBREW_ROOT='${perlbrew_root} ${perlbrew_bin} install-cpanm",
+            command => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} ${perlbrew::perlbrew_bin} install-cpanm'",
             user    => $user,
             group   => $group,
-            creates => "${perlbrew_root}/perls/${version}/bin/cpanm",
+            creates => "${perlbrew::perlbrew_root}/perls/${version}/bin/cpanm",
             require => Perlbrew::Install_perl[$version],
         }
     }
