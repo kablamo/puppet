@@ -7,3 +7,4 @@ var/reports
 var/rrd
 var/run
 var/state
+ssl
