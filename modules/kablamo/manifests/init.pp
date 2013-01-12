@@ -1,7 +1,11 @@
 class kablamo {
-    class { 'packages': ensure => 'present' }
-    class { 'dotfiles': }
-    class { 'perl':     }
+    $user = 'eric'
+    $home = "/home/${user}"
+
+    class { packages: ensure => 'present' }
+    class { dotfiles: }
+    class { perl: user => $user, perlbrew_root => "${home}/perl5/perlbrew"}
+#    class { 'cpanmodules':     }
 
     #file { aliases:
     #  path    => '/home/eric/.aliases',
