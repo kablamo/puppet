@@ -63,6 +63,7 @@ class kablamo::cpanmodules {
     cpanm { 'Syntax::Keyword::Junction':           }
     cpanm { 'Test::Most':                          }
     cpanm { 'Test::Routine':                       }
+    cpanm { 'Text::CSV':                           }
     cpanm { 'Time::HiRes':                         }
     cpanm { 'URI':                                 }
     cpanm { 'Vi::QuickFix':                        }
