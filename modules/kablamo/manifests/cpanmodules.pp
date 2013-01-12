@@ -58,6 +58,7 @@ class kablamo::cpanmodules {
     cpanm { 'Path::Class::Rule':                   }
     cpanm { 'Plack':                               }
     cpanm { 'Plack::Middleware::Assets':           }
+    cpanm { 'Plack::Middleware::Deflater':         }
     cpanm { 'Pod::Cpandoc':                        }
     cpanm { 'Regexp::Common':                      }
     cpanm { 'Server::Starter':                     }
