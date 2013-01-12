@@ -1,5 +1,5 @@
 class kablamo {
-    class { 'packages': }
+    class { 'packages': ensure => 'present' }
     class { 'dotfiles': }
     class { 'perl':     }
 
