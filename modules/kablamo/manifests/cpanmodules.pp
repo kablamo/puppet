@@ -29,6 +29,7 @@ class kablamo::cpanmodules {
     cpanm { 'Data::TreeDumper':                    }
     cpanm { 'DateTime':                            }
     cpanm { 'DateTime::Format::SQLite':            }
+    cpanm { 'DateTime::Format::Natural':           }
     cpanm { 'Devel::REPL':                         }
     cpanm { 'Dist::Zilla':                         }
     cpanm { 'Dist::Zilla::PluginBundle::DAGOLDEN': }
