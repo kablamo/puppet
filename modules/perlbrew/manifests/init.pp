@@ -1,6 +1,6 @@
 class perlbrew (
     $user,
-    $group,
+    $group = $user,
     $perlbrew_root,
     $perlbrew_bin  = "${perlbrew_root}/bin/perlbrew",
 ) {
@@ -24,8 +24,8 @@ class perlbrew (
         exec { "install_perl_${version}":
             command => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} ${perlbrew::perlbrew_bin} install ${version} --as ${version} -Accflags=-fPIC -Dcccdlflags=-fPIC'",
             timeout => 3600,
-            user    => $user,
-            group   => $group,
+            user    => $perlbrew::user,
+            group   => $perlbrew::group,
             creates => "${perlbrew::perlbrew_root}/perls/perl-${version}"
         }
     }
@@ -34,8 +34,8 @@ class perlbrew (
         exec { "perlbrew_switch_${name}":
             command => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} ${perlbrew::perlbrew_bin} switch $version'",
             timeout => 3600,
-            user    => $user,
-            group   => $group,
+            user    => $perlbrew::user,
+            group   => $perlbrew::group,
             require => File["${perlbrew::perlbrew_root}/perls/${version}"],
         }
     }
@@ -48,8 +48,8 @@ class perlbrew (
             # temporary storage, which happens to not be writable for the perlbrew
             # user. Use /bin/su to work this around.
             command => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} ${perlbrew::perlbrew_bin} install-cpanm'",
-            user    => $user,
-            group   => $group,
+            user    => $perlbrew::user,
+            group   => $perlbrew::group,
             creates => "${perlbrew::perlbrew_root}/perls/${version}/bin/cpanm",
             require => Perlbrew::Install_perl[$version],
         }
