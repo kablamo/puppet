@@ -1,0 +1,9 @@
+var/client_data
+var/client_yaml
+var/clientbucket
+var/lib
+var/log
+var/reports
+var/rrd
+var/run
+var/state
