@@ -19,13 +19,12 @@ What it does
  - Installs some Ubuntu packages.
  - Installs my dotfiles (https://github.com/kablamo/dotfiles).
  - Installs Perlbrew
- - Install cpanm
+ - Installs cpanm
+ - Installs CPAN modules
 
 
 TODO
 ----
-
- - Task::BeLike::KABLAMO
 
 If the new Ubuntu box is a server then it configures some extra stuff.  This is
 the main reason for going through all this trouble.  I want to be able to
