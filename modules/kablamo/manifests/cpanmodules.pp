@@ -1,75 +1,77 @@
-class kablamo::cpanmodules {
-    cpanm { 'App::Ack':                            }
-    cpanm { 'App::Genpass':                        }
-    cpanm { 'App::Uni':                            }
-    cpanm { 'App::cpanoutdated':                   }
-    cpanm { 'App::mymeta_requires':                }
-    cpanm { 'Authen::Passphrase':                  }
-    cpanm { 'Bundle::LWP':                         }
-    cpanm { 'CEDict::Pinyin':                      }
-    cpanm { 'Captcha::reCAPTCHA':                  }
-    cpanm { 'Capture::Tiny':                       }
-    cpanm { 'Carp::Always':                        }
-    cpanm { 'Catalyst::Devel':                     }
-    cpanm { 'Catalyst::Manual':                    }
-    cpanm { 'Catalyst::Plugin::Assets':            }
-    cpanm { 'Catalyst::Plugin::Cache::HTTP':       }
-    cpanm { 'Catalyst::Plugin::Compress::Gzip':    }
-    cpanm { 'Catalyst::Plugin::Log::Dispatch':     }
-    cpanm { 'Catalyst::Plugin::StackTrace':        }
-    cpanm { 'Catalyst::Plugin::Unicode::Encoding': }
-    cpanm { 'Catalyst::View::JSON':                }
-    cpanm { 'Catalyst::View::TT':                  }
-    cpanm { 'CatalystX::AuthenCookie':             }
-    cpanm { 'DBD::SQLite':                         }
-    cpanm { 'DBI':                                 }
-    cpanm { 'Data::Currency':                      }
-    cpanm { 'Data::Dumper::Concise':               }
-    cpanm { 'Data::Printer':                       }
-    cpanm { 'Data::TreeDumper':                    }
-    cpanm { 'DateTime':                            }
-    cpanm { 'DateTime::Format::SQLite':            }
-    cpanm { 'DateTime::Format::Natural':           }
-    cpanm { 'Devel::REPL':                         }
-    cpanm { 'Dist::Zilla':                         }
-    cpanm { 'Dist::Zilla::PluginBundle::DAGOLDEN': }
-    cpanm { 'Fey':                                 }
-    cpanm { 'Fey::Loader':                         }
-    cpanm { 'Fey::ORM':                            }
-    cpanm { 'Git::Wrapper':                        }
-    cpanm { 'HTML::Scrubber':                      }
-    cpanm { 'HTTP::Tiny':                          }
-    cpanm { 'IO::CaptureOutput':                   }
-    cpanm { 'IO::Socket::SSL':                     }
-    cpanm { 'IPC::Run3':                           }
-    cpanm { 'IPC::System::Simple':                 }
-    cpanm { 'Image::ExifTool':                     }
-    cpanm { 'JSON::XS':                            }
-    cpanm { 'LWP::Protocol::https':                }
-    cpanm { 'List::AllUtils':                      }
-    cpanm { 'Log::Dispatch::Config':               }
-    cpanm { 'Math::Random::MT':                    }
-    cpanm { 'Module::Load::Conditional':           }
-    cpanm { 'Moose':                               }
-    cpanm { 'MooseX::Getopt::Usage':               }
-    cpanm { 'Net::Server::SS::PreFork':            }
-    cpanm { 'Number::Format':                      }
-    cpanm { 'Path::Class':                         }
-    cpanm { 'Path::Class::Rule':                   }
-    cpanm { 'Plack':                               }
-    cpanm { 'Plack::Middleware::Assets':           }
-    cpanm { 'Plack::Middleware::Deflater':         }
-    cpanm { 'Pod::Cpandoc':                        }
-    cpanm { 'Regexp::Common':                      }
-    cpanm { 'Server::Starter':                     }
-    cpanm { 'Syntax::Keyword::Junction':           }
-    cpanm { 'Test::Most':                          }
-    cpanm { 'Test::Routine':                       }
-    cpanm { 'Text::CSV':                           }
-    cpanm { 'Time::HiRes':                         }
-    cpanm { 'URI':                                 }
-    cpanm { 'Vi::QuickFix':                        }
-    cpanm { 'WWW::Mechanize':                      }
-    cpanm { 'YAML::XS':                            }
+class kablamo::cpanmodules ($ensure='present') {
+
+    cpanm { 'App::Ack':                            ensure => $ensure }
+    cpanm { 'App::Genpass':                        ensure => $ensure }
+    cpanm { 'App::Uni':                            ensure => $ensure }
+    cpanm { 'App::cpanoutdated':                   ensure => $ensure }
+    cpanm { 'App::mymeta_requires':                ensure => $ensure }
+    cpanm { 'App::perlfind':                       ensure => $ensure }
+    cpanm { 'Authen::Passphrase':                  ensure => $ensure }
+    cpanm { 'Bundle::LWP':                         ensure => $ensure }
+    cpanm { 'CEDict::Pinyin':                      ensure => $ensure }
+    cpanm { 'Captcha::reCAPTCHA':                  ensure => $ensure }
+    cpanm { 'Capture::Tiny':                       ensure => $ensure }
+    cpanm { 'Carp::Always':                        ensure => $ensure }
+    cpanm { 'Catalyst::Devel':                     ensure => $ensure }
+    cpanm { 'Catalyst::Manual':                    ensure => $ensure }
+    cpanm { 'Catalyst::Plugin::Assets':            ensure => $ensure }
+    cpanm { 'Catalyst::Plugin::Cache::HTTP':       ensure => $ensure }
+    cpanm { 'Catalyst::Plugin::Compress::Gzip':    ensure => $ensure }
+    cpanm { 'Catalyst::Plugin::Log::Dispatch':     ensure => $ensure }
+    cpanm { 'Catalyst::Plugin::StackTrace':        ensure => $ensure }
+    cpanm { 'Catalyst::Plugin::Unicode::Encoding': ensure => $ensure }
+    cpanm { 'Catalyst::View::JSON':                ensure => $ensure }
+    cpanm { 'Catalyst::View::TT':                  ensure => $ensure }
+    cpanm { 'CatalystX::AuthenCookie':             ensure => $ensure }
+    cpanm { 'DBD::SQLite':                         ensure => $ensure }
+    cpanm { 'DBI':                                 ensure => $ensure }
+    cpanm { 'Data::Currency':                      ensure => $ensure }
+    cpanm { 'Data::Dumper::Concise':               ensure => $ensure }
+    cpanm { 'Data::Printer':                       ensure => $ensure }
+    cpanm { 'Data::TreeDumper':                    ensure => $ensure }
+    cpanm { 'DateTime':                            ensure => $ensure }
+    cpanm { 'DateTime::Format::SQLite':            ensure => $ensure }
+    cpanm { 'DateTime::Format::Natural':           ensure => $ensure }
+    cpanm { 'Devel::REPL':                         ensure => $ensure }
+    cpanm { 'Dist::Zilla':                         ensure => $ensure }
+    cpanm { 'Dist::Zilla::PluginBundle::DAGOLDEN': ensure => $ensure }
+    cpanm { 'Fey':                                 ensure => $ensure }
+    cpanm { 'Fey::Loader':                         ensure => $ensure }
+    cpanm { 'Fey::ORM':                            ensure => $ensure }
+    cpanm { 'Git::Wrapper':                        ensure => $ensure }
+    cpanm { 'HTML::Scrubber':                      ensure => $ensure }
+    cpanm { 'HTTP::Tiny':                          ensure => $ensure }
+    cpanm { 'IO::CaptureOutput':                   ensure => $ensure }
+    cpanm { 'IO::Socket::SSL':                     ensure => $ensure }
+    cpanm { 'IPC::Run3':                           ensure => $ensure }
+    cpanm { 'IPC::System::Simple':                 ensure => $ensure }
+    cpanm { 'Image::ExifTool':                     ensure => $ensure }
+    cpanm { 'JSON::XS':                            ensure => $ensure }
+    cpanm { 'LWP::Protocol::https':                ensure => $ensure }
+    cpanm { 'List::AllUtils':                      ensure => $ensure }
+    cpanm { 'Log::Dispatch::Config':               ensure => $ensure }
+    cpanm { 'Math::Random::MT':                    ensure => $ensure }
+    cpanm { 'Module::Load::Conditional':           ensure => $ensure }
+    cpanm { 'Moose':                               ensure => $ensure }
+    cpanm { 'MooseX::Getopt::Usage':               ensure => $ensure }
+    cpanm { 'Net::Server::SS::PreFork':            ensure => $ensure }
+    cpanm { 'Number::Format':                      ensure => $ensure }
+    cpanm { 'Path::Class':                         ensure => $ensure }
+    cpanm { 'Path::Class::Rule':                   ensure => $ensure }
+    cpanm { 'Plack':                               ensure => $ensure }
+    cpanm { 'Plack::Middleware::Assets':           ensure => $ensure }
+    cpanm { 'Plack::Middleware::Deflater':         ensure => $ensure }
+    cpanm { 'Pod::Cpandoc':                        ensure => $ensure }
+    cpanm { 'Regexp::Common':                      ensure => $ensure }
+    cpanm { 'Server::Starter':                     ensure => $ensure }
+    cpanm { 'Syntax::Keyword::Junction':           ensure => $ensure }
+    cpanm { 'Test::Most':                          ensure => $ensure }
+    cpanm { 'Test::Routine':                       ensure => $ensure }
+    cpanm { 'Text::CSV':                           ensure => $ensure }
+    cpanm { 'Time::HiRes':                         ensure => $ensure }
+    cpanm { 'URI':                                 ensure => $ensure }
+    cpanm { 'Vi::QuickFix':                        ensure => $ensure }
+    cpanm { 'WWW::Mechanize':                      ensure => $ensure }
+    cpanm { 'YAML::XS':                            ensure => $ensure }
 
 }
