@@ -15,7 +15,7 @@ class kablamo {
         perlbrew_root => $perlbrew_root,
         version       => $perl_version,
     }
-    class { cpanmodules: }
+    class { cpanmodules: ensure => 'present'}
 
 
     #file { aliases:
