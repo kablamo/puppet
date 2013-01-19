@@ -10,7 +10,7 @@ How to use it
 
     sudo apt-get install puppet git libpath-class-perl
     git clone https://github.com/kablamo/puppet.git ~/.puppet
-    sudo puppet apply --confdir=/home/eric/.puppet ~/.puppet/manifests/site.pp
+    sudo puppet apply --confdir=/home/eric/.puppet ~/.puppet/manifests/site.pp -v
 
 
 What it does
@@ -19,12 +19,12 @@ What it does
  - Installs some Ubuntu packages.
  - Installs my dotfiles (https://github.com/kablamo/dotfiles).
  - Installs Perlbrew
+ - Install cpanm
 
 
 TODO
 ----
 
- - Install cpanm
  - Task::BeLike::KABLAMO
 
 If the new Ubuntu box is a server then it configures some extra stuff.  This is
