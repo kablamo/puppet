@@ -15,6 +15,7 @@ define cpanm (
         command   => "${kablamo::perl_locallib}/bin/perl ${kablamo::perlbrew_root}/bin/cpanm --local-lib-contained=${kablamo::perl_locallib} $title",
         user      => $kablamo::user,
         group     => $kablamo::user,
+        timeout   => 0,
         logoutput => true,
         creates   => $creates,
     }
