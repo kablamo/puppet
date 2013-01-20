@@ -51,6 +51,7 @@ class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'List::AllUtils':                      ensure => $ensure }
     cpanm { 'Log::Dispatch::Config':               ensure => $ensure }
     cpanm { 'Math::Random::MT':                    ensure => $ensure }
+    cpanm { 'Math::Round':                         ensure => $ensure }
     cpanm { 'Module::Load::Conditional':           ensure => $ensure }
     cpanm { 'Moose':                               ensure => $ensure }
     cpanm { 'MooseX::Getopt::Usage':               ensure => $ensure }
