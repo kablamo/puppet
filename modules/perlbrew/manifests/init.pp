@@ -35,7 +35,7 @@ class perlbrew (
 
     define switch ($version) {
         exec { "perlbrew_switch_${name}":
-            command   => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} ${perlbrew::perlbrew_bin} switch $version'",
+            command   => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} ${perlbrew::perlbrew_bin} switch perl-${version}'",
             timeout   => 3600,
             user      => $perlbrew::user,
             group     => $perlbrew::group,
