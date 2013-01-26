@@ -38,6 +38,7 @@ class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'Fey':                                 ensure => $ensure }
     cpanm { 'Fey::Loader':                         ensure => $ensure }
     cpanm { 'Fey::ORM':                            ensure => $ensure }
+    cpanm { 'Getopt::Long::Descriptive':           ensure => $ensure }
     cpanm { 'Git::Wrapper':                        ensure => $ensure }
     cpanm { 'HTML::Scrubber':                      ensure => $ensure }
     cpanm { 'HTTP::Tiny':                          ensure => $ensure }
