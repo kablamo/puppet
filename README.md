@@ -27,3 +27,11 @@ TODO
 If the new Ubuntu box is a server then configure some extra stuff.  This is the
 main reason for going through all this trouble.  I want to more easily handle
 catastrophic failures or switching hosting providers.
+
+What it does not do
+-------------------
+
+This is mostly a list of tasks for myself.
+
+ - scp .ssh/eric.pub newhost:~/.ssh/authorized_keys2
+
