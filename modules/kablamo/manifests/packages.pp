@@ -4,6 +4,7 @@ class kablamo::packages ($ensure = 'latest') {
     package { curl:               ensure => $ensure }
     package { git:                ensure => $ensure }
     package { htop:               ensure => $ensure }
+    package { keychain:           ensure => $ensure }
     package { libexpat1-dev:      ensure => $ensure } # XML::Parser
     package { libssl-dev:         ensure => $ensure }
     package { libxml2-dev:        ensure => $ensure } # XML::Parser
