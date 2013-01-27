@@ -1,5 +1,4 @@
 class kablamo::cpanmodules ($ensure='present') {
-
     cpanm { 'App::Ack':                            ensure => $ensure }
     cpanm { 'App::Genpass':                        ensure => $ensure }
     cpanm { 'App::Uni':                            ensure => $ensure }
@@ -75,5 +74,4 @@ class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'Vi::QuickFix':                        ensure => $ensure }
     cpanm { 'WWW::Mechanize':                      ensure => $ensure }
     cpanm { 'YAML::XS':                            ensure => $ensure }
-
 }
