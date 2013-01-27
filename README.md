@@ -31,7 +31,13 @@ catastrophic failures or switching hosting providers.
 What it does not do
 -------------------
 
-This is mostly a list of tasks for myself.
+This is mostly a list of tasks for myself.  I should make this into a bootstrap
+script.
 
- - scp .ssh/eric.pub newhost:~/.ssh/authorized_keys2
+    adduser eric
+    passwd
+    adduser eric sudo
+    mkdir ~/.ssh
+    chmod g-rwx,o-rwx ~/.ssh
+    cat >> ~/.ssh/authorized_keys2
 
