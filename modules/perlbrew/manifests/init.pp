@@ -4,7 +4,7 @@ class perlbrew (
     $perlbrew_root,
     $perlbrew_bin  = "${perlbrew_root}/bin/perlbrew",
 ) {
-    exec { $perlbrew_bin:
+    exec { install_perlbrew:
         command   => "/usr/bin/curl -kL http://install.perlbrew.pl | /bin/bash",
         user      => $user,
         group     => $group,
@@ -13,13 +13,13 @@ class perlbrew (
         require   => [ Package["build-essential"], Package["curl"] ],
     }
 
-    exec { "perlbrew_init":
+    exec { perlbrew_init:
         command   => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew_root} ${perlbrew_bin} init'",
         user      => $user,
         group     => $group,
         logoutput => true,
         creates   => "${perlbrew_root}/perls",
-        require   => Exec[$perlbrew_bin],
+        require   => Exec['install_perlbrew'],
     }
 
     define install_perl ($version) {
@@ -30,17 +30,21 @@ class perlbrew (
             group     => $perlbrew::group,
             logoutput => true,
             creates   => "${perlbrew::perlbrew_root}/perls/perl-${version}"
+            require   => Exec['perlbrew_init'],
         }
     }
 
     define switch ($version) {
-        exec { "perlbrew_switch_${name}":
+        exec { "perlbrew_switch_${version}":
             command   => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} ${perlbrew::perlbrew_bin} switch perl-${version}'",
             timeout   => 3600,
             user      => $perlbrew::user,
             group     => $perlbrew::group,
             logoutput => true,
-            require   => File["${perlbrew::perlbrew_root}/perls/perl-${version}"],
+            require   => [
+                          File["${perlbrew::perlbrew_root}/perls/perl-${version}"], 
+                          Perlbrew::Install_perl[$version]
+                         ],
         }
     }
   
@@ -56,7 +60,10 @@ class perlbrew (
             group     => $perlbrew::group,
             logoutput => true,
             creates   => "${perlbrew::perlbrew_root}/bin/cpanm",
-            require   => Perlbrew::Install_perl[$version],
+            require   => [
+                          Perlbrew::Install_perl[$version],
+                          Perlbrew::Switch[$version],
+                         ],
         }
     }
 }
