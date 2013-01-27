@@ -1,3 +1,4 @@
+# TODO put this into the perlbrew package?
 define cpanm (
     $ensure  = 'present',
     $creates = $ensure ? {
@@ -18,5 +19,6 @@ define cpanm (
         timeout   => 0,
         logoutput => true,
         creates   => $creates,
+        require   => Perlbrew::Install_cpanm[$kablamo::perl_version]
     }
 }
