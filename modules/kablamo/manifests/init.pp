@@ -8,13 +8,13 @@ class kablamo {
     $perl_locallib = "${perlbrew_root}/perls/perl-${perl_version}"
 
     # do stuff
-    class { packages: ensure => 'present' }
-    class { dotfiles: }
+    class { packages: ensure => 'present' }->
+    class { dotfiles: }->
     class { perl: 
         user          => $user, 
         perlbrew_root => $perlbrew_root,
         version       => $perl_version,
-    }
+    }->
     class { cpanmodules: ensure => 'present'}
 
 
