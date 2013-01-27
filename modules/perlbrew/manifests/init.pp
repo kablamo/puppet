@@ -25,6 +25,7 @@ class perlbrew (
     define install_perl ($version) {
         exec { "install_perl_${version}":
             command   => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} ${perlbrew::perlbrew_bin} install ${version} --as perl-${version} -Accflags=-fPIC -Dcccdlflags=-fPIC'",
+            timeout   => 3600,
             user      => $perlbrew::user,
             group     => $perlbrew::group,
             logoutput => true,
