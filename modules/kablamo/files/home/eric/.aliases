@@ -1,3 +1,6 @@
+keychain ~/.ssh/id_dsa
+. ~/.keychain/$HOSTNAME-sh
+
 alias serve='sudo /home/eric/perl5/perlbrew/perls/perl-5.15.4/bin/plackup -S starman -Iiijo.org/lib -Inetworthify.com/lib -MDBD::SQLite -MCatalyst -MFey::ORM --workers 2 -r --user eric --listen :8080 networthify.com/all.psgi'
 alias networthify='sudo /home/eric/perl5/perlbrew/perls/perl-5.15.4/bin/plackup -S starman -Ilib -MDBD::SQLite -MCatalyst -MFey::ORM --workers 2 -r --user eric --listen :80'
 alias start='plackup -S starman -Ilib -MDBD::SQLite -MCatalyst -MFey::ORM --workers 2 -r '
