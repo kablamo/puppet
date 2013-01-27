@@ -1,10 +1,10 @@
 class kablamo::user {
     user { user_eric:
-        ensure     => present,
+        ensure     => absent,
         groups     => ['sudo'],
         shell      => "/bin/bash",
         home       => "/home/eric",
-    }
+    }->
     ssh_authorized_key { ssh_key_eric:
         ensure      => present,
         type        => 'ssh-rsa',
