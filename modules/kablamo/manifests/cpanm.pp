@@ -19,6 +19,6 @@ define cpanm (
         timeout   => 0,
         logoutput => true,
         creates   => $creates,
-        require   => Perlbrew::Install_cpanm[$kablamo::perl_version]
+#        require   => Perlbrew::Install_cpanm[$kablamo::perl_version]
     }
 }
