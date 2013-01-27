@@ -9,6 +9,8 @@ What it does
 ------------
 
  - Installs some Ubuntu packages.
+ - Make sure $USER is in the sudo group and the shell is /bin/bash
+ - Put my public key in .ssh/authorized_keys
  - Installs my dotfiles (https://github.com/kablamo/dotfiles).
  - Installs Perlbrew
  - Installs cpanm
@@ -21,7 +23,8 @@ How to use it
     git clone https://github.com/kablamo/puppet.git ~/.puppet
     sudo puppet apply --confdir=/home/eric/.puppet ~/.puppet/manifests/site.pp -v
 
-(Or I can just type 'p' because I have that last line as an alias in my .bashrc.)
+After the inital run I can just type 'p' because I have that last line as an
+alias in my .bashrc.
 
 TODO
 ----
@@ -30,21 +33,19 @@ If the new Ubuntu box is a server then configure some extra stuff.  This is the
 main reason for going through all this trouble.  I want to more easily handle
 catastrophic failures or switching hosting providers.
 
-Also:
-
-    mkdir ~/.ssh
-    chmod g-rwx,o-rwx ~/.ssh
-    cat >> ~/.ssh/authorized_keys2
-
 What it does not do
 -------------------
 
-This is mostly a list of tasks for myself.  I should make this into a bootstrap
-script.
+This is mostly a list of tasks for myself.  
 
     adduser eric
     passwd
     adduser eric sudo
+
     # if wget fails, but ping works, disable ipv6 in /etc/network/interfaces 
-    
+    #    and restart the interfaces with 'ifdown eth0 && ifup eth0'
+
+    # generate new ssh keys with 'ssh-keygen -t dsa'
+    # add new public key to github:    https://github.com/settings/ssh
+    # add new public key to bitbucket: https://bitbucket.org/account/user/kablamo/ssh-keys/
 
