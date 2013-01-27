@@ -28,6 +28,12 @@ If the new Ubuntu box is a server then configure some extra stuff.  This is the
 main reason for going through all this trouble.  I want to more easily handle
 catastrophic failures or switching hosting providers.
 
+Also:
+
+    mkdir ~/.ssh
+    chmod g-rwx,o-rwx ~/.ssh
+    cat >> ~/.ssh/authorized_keys2
+
 What it does not do
 -------------------
 
@@ -37,7 +43,6 @@ script.
     adduser eric
     passwd
     adduser eric sudo
-    mkdir ~/.ssh
-    chmod g-rwx,o-rwx ~/.ssh
-    cat >> ~/.ssh/authorized_keys2
+    # if wget fails, but ping works, disable ipv6 in /etc/network/interfaces 
+    
 
