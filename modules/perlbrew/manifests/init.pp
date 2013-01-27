@@ -25,26 +25,21 @@ class perlbrew (
     define install_perl ($version) {
         exec { "install_perl_${version}":
             command   => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} ${perlbrew::perlbrew_bin} install ${version} --as perl-${version} -Accflags=-fPIC -Dcccdlflags=-fPIC'",
-            timeout   => 3600,
             user      => $perlbrew::user,
             group     => $perlbrew::group,
             logoutput => true,
-            creates   => "${perlbrew::perlbrew_root}/perls/perl-${version}"
+            creates   => "${perlbrew::perlbrew_root}/perls/perl-${version}",
             require   => Exec['perlbrew_init'],
         }
     }
 
     define switch ($version) {
         exec { "perlbrew_switch_${version}":
-            command   => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} ${perlbrew::perlbrew_bin} switch perl-${version}'",
-            timeout   => 3600,
+            command   => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} source ${perlbrew::perlbrew_root}/etc/bashrc && ${perlbrew::perlbrew_bin} switch perl-${version}'",
             user      => $perlbrew::user,
             group     => $perlbrew::group,
             logoutput => true,
-            require   => [
-                          File["${perlbrew::perlbrew_root}/perls/perl-${version}"], 
-                          Perlbrew::Install_perl[$version]
-                         ],
+            require   => Perlbrew::Install_perl[$version],
         }
     }
   
@@ -55,7 +50,7 @@ class perlbrew (
             # user/group options. That causes cpanm to use /root/.cpanm for it's
             # temporary storage, which happens to not be writable for the perlbrew
             # user. Use /bin/su to work this around.
-            command   => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} ${perlbrew::perlbrew_bin} install-cpanm'",
+            command   => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} source ${perlbrew::perlbrew_root}/etc/bashrc && ${perlbrew::perlbrew_bin} install-cpanm'",
             user      => $perlbrew::user,
             group     => $perlbrew::group,
             logoutput => true,
