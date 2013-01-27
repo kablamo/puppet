@@ -5,7 +5,6 @@ class kablamo::packages ($ensure = 'latest') {
     package { git:                ensure => $ensure }
     package { htop:               ensure => $ensure }
     package { libexpat1-dev:      ensure => $ensure } # XML::Parser
-    package { libpath-class-perl: ensure => $ensure } # dotfiles
     package { libssl-dev:         ensure => $ensure }
     package { libxml2-dev:        ensure => $ensure } # XML::Parser
     package { locate:             ensure => $ensure }
