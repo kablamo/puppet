@@ -21,6 +21,8 @@ How to use it
     git clone https://github.com/kablamo/puppet.git ~/.puppet
     sudo puppet apply --confdir=/home/eric/.puppet ~/.puppet/manifests/site.pp -v
 
+(Or I can just type 'p' because I have that last line as an alias in my .bashrc.)
+
 TODO
 ----
 
