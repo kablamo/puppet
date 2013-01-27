@@ -1,6 +1,6 @@
 class kablamo::user {
     user { eric:
-        ensure     => absent,
+        ensure     => present,
         groups     => ['sudo'],
         shell      => "/bin/bash",
         home       => "/home/eric",
