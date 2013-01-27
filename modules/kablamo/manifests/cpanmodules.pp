@@ -22,6 +22,7 @@ class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'Catalyst::View::JSON':                ensure => $ensure }
     cpanm { 'Catalyst::View::TT':                  ensure => $ensure }
     cpanm { 'CatalystX::AuthenCookie':             ensure => $ensure }
+    cpanm { 'Crypt::Diceware':                     ensure => $ensure }
     cpanm { 'DBD::SQLite':                         ensure => $ensure }
     cpanm { 'DBI':                                 ensure => $ensure }
     cpanm { 'Data::Currency':                      ensure => $ensure }
