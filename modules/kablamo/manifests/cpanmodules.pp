@@ -1,5 +1,4 @@
 class kablamo::cpanmodules ($ensure='present') {
-
     cpanm { 'App::Ack':                            ensure => $ensure }
     cpanm { 'App::Genpass':                        ensure => $ensure }
     cpanm { 'App::Uni':                            ensure => $ensure }
@@ -23,6 +22,7 @@ class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'Catalyst::View::JSON':                ensure => $ensure }
     cpanm { 'Catalyst::View::TT':                  ensure => $ensure }
     cpanm { 'CatalystX::AuthenCookie':             ensure => $ensure }
+    cpanm { 'Crypt::Diceware':                     ensure => $ensure }
     cpanm { 'DBD::SQLite':                         ensure => $ensure }
     cpanm { 'DBI':                                 ensure => $ensure }
     cpanm { 'Data::Currency':                      ensure => $ensure }
@@ -39,6 +39,7 @@ class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'Fey':                                 ensure => $ensure }
     cpanm { 'Fey::Loader':                         ensure => $ensure }
     cpanm { 'Fey::ORM':                            ensure => $ensure }
+    cpanm { 'Getopt::Long::Descriptive':           ensure => $ensure }
     cpanm { 'Git::Wrapper':                        ensure => $ensure }
     cpanm { 'HTML::Scrubber':                      ensure => $ensure }
     cpanm { 'HTTP::Tiny':                          ensure => $ensure }
@@ -77,5 +78,4 @@ class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'Vi::QuickFix':                        ensure => $ensure }
     cpanm { 'WWW::Mechanize':                      ensure => $ensure }
     cpanm { 'YAML::XS':                            ensure => $ensure }
-
 }

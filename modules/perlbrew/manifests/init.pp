@@ -4,7 +4,7 @@ class perlbrew (
     $perlbrew_root,
     $perlbrew_bin  = "${perlbrew_root}/bin/perlbrew",
 ) {
-    exec { $perlbrew_bin:
+    exec { install_perlbrew:
         command   => "/usr/bin/curl -kL http://install.perlbrew.pl | /bin/bash",
         user      => $user,
         group     => $group,
@@ -13,13 +13,13 @@ class perlbrew (
         require   => [ Package["build-essential"], Package["curl"] ],
     }
 
-    exec { "perlbrew_init":
+    exec { perlbrew_init:
         command   => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew_root} ${perlbrew_bin} init'",
         user      => $user,
         group     => $group,
         logoutput => true,
         creates   => "${perlbrew_root}/perls",
-        require   => Exec[$perlbrew_bin],
+        require   => Exec['install_perlbrew'],
     }
 
     define install_perl ($version) {
@@ -29,18 +29,18 @@ class perlbrew (
             user      => $perlbrew::user,
             group     => $perlbrew::group,
             logoutput => true,
-            creates   => "${perlbrew::perlbrew_root}/perls/perl-${version}"
+            creates   => "${perlbrew::perlbrew_root}/perls/perl-${version}",
+            require   => Exec['perlbrew_init'],
         }
     }
 
     define switch ($version) {
-        exec { "perlbrew_switch_${name}":
-            command   => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} ${perlbrew::perlbrew_bin} switch perl-${version}'",
-            timeout   => 3600,
+        exec { "perlbrew_switch_${version}":
+            command   => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} source ${perlbrew::perlbrew_root}/etc/bashrc && ${perlbrew::perlbrew_bin} switch perl-${version}'",
             user      => $perlbrew::user,
             group     => $perlbrew::group,
             logoutput => true,
-            require   => File["${perlbrew::perlbrew_root}/perls/perl-${version}"],
+            require   => Perlbrew::Install_perl[$version],
         }
     }
   
@@ -51,12 +51,15 @@ class perlbrew (
             # user/group options. That causes cpanm to use /root/.cpanm for it's
             # temporary storage, which happens to not be writable for the perlbrew
             # user. Use /bin/su to work this around.
-            command   => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} ${perlbrew::perlbrew_bin} install-cpanm'",
+            command   => "/bin/bash -c 'PERLBREW_ROOT=${perlbrew::perlbrew_root} source ${perlbrew::perlbrew_root}/etc/bashrc && ${perlbrew::perlbrew_bin} install-cpanm'",
             user      => $perlbrew::user,
             group     => $perlbrew::group,
             logoutput => true,
             creates   => "${perlbrew::perlbrew_root}/bin/cpanm",
-            require   => Perlbrew::Install_perl[$version],
+            require   => [
+                          Perlbrew::Install_perl[$version],
+                          Perlbrew::Switch[$version],
+                         ],
         }
     }
 }
