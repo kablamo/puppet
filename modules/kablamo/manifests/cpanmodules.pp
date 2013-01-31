@@ -44,6 +44,7 @@ class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'HTML::Scrubber':                      ensure => $ensure }
     cpanm { 'HTTP::Tiny':                          ensure => $ensure }
     cpanm { 'IO::CaptureOutput':                   ensure => $ensure }
+    cpanm { 'IO::Prompter':                        ensure => $ensure }
     cpanm { 'IO::Socket::SSL':                     ensure => $ensure }
     cpanm { 'IPC::Run3':                           ensure => $ensure }
     cpanm { 'IPC::System::Simple':                 ensure => $ensure }
