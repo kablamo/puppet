@@ -71,6 +71,7 @@ class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'Server::Starter':                     ensure => $ensure }
     cpanm { 'Syntax::Keyword::Junction':           ensure => $ensure }
     cpanm { 'Term::ReadLine::Gnu':                 ensure => $ensure } # Devel::REPL
+    cpanm { 'Term::ReadKey':                       ensure => $ensure }
     cpanm { 'Test::Most':                          ensure => $ensure }
     cpanm { 'Test::Routine':                       ensure => $ensure }
     cpanm { 'Text::CSV':                           ensure => $ensure }
