@@ -14,7 +14,12 @@ class varnish {
         mode   => '0644',
         source => "${files}/etc/varnish/default.vcl",
     }
-    package { varnish:            ensure => $ensure }
-    #   require   => [ Package["varnish"] ],
-    # todo: start service
+
+    package { varnish: ensure => $ensure }
+    service { varnish_service: 
+        name     => 'varnish',
+        enable   => true,
+        ensure   => true, 
+        require  => Package["varnish"],
+    }
 }
