@@ -1,7 +1,5 @@
 class varnish {
-    warning "installing varnish: ${settings::confdir}"
-
-    $files="${settings::confdir}/modules/kablamo/files"
+    $files="${settings::confdir}/modules/varnish/files"
 
     file { '/etc/varnish':
         ensure => 'directory',
