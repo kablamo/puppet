@@ -1,6 +1,5 @@
-class kablamo::varnish {
+class varnish {
     warning "installing varnish: ${settings::confdir}"
-    require kablamo::packages
 
     $files="${settings::confdir}/modules/kablamo/files"
 
