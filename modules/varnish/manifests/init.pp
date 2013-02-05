@@ -18,4 +18,5 @@ class kablamo::varnish {
         source => "${files}/etc/varnish/default.vcl",
     }
     #   require   => [ Package["varnish"] ],
+    # todo: start service
 }
