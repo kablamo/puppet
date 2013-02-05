@@ -18,6 +18,10 @@ class kablamo {
     }->
     class { cpanmodules: ensure => 'present'}
 
+    if $hostname == 'eric' {
+        class { varnish: }
+    }
+
 
     #file { aliases:
     #  path    => '/home/eric/.aliases',
