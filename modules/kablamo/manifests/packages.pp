@@ -2,6 +2,7 @@ class kablamo::packages ($ensure = 'latest') {
     package { atop:               ensure => $ensure }
     package { build-essential:    ensure => $ensure }
     package { curl:               ensure => $ensure }
+    package { ctags:              ensure => $ensure }
     package { git:                ensure => $ensure }
     package { htop:               ensure => $ensure }
     package { keychain:           ensure => $ensure }
