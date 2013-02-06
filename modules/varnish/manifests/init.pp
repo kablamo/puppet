@@ -14,6 +14,13 @@ class varnish {
         mode   => '0644',
         source => "${files}/etc/varnish/default.vcl",
     }
+    file { '/etc/default/varnish':
+        ensure => 'file',
+        owner  => 'root',
+        group  => 'root',
+        mode   => '0644',
+        source => "${files}/etc/default/varnish",
+    }
 
     package { varnish: ensure => $ensure }
     service { varnish_service: 
