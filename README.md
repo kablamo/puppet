@@ -15,6 +15,8 @@ What it does
  - Installs Perlbrew
  - Installs cpanm
  - Installs CPAN modules
+ - Installs and configures varnish
+ - Installs and configures exim4
 
 How to use it
 -------------
@@ -23,20 +25,14 @@ How to use it
     git clone https://github.com/kablamo/puppet.git ~/.puppet
     sudo puppet apply --confdir=/home/eric/.puppet ~/.puppet/manifests/site.pp -v
 
-After the inital run I can just type 'p' because I have that last line as an
-alias in my .bashrc.
-
-TODO
-----
-
-If the new Ubuntu box is a server then configure some extra stuff.  This is the
-main reason for going through all this trouble.  I want to more easily handle
-catastrophic failures or switching hosting providers.
+After running the above commands once, I can just type `p` to rerun `puppet apply` because I
+have an alias setup for it in my .bashrc.
 
 What it does not do
 -------------------
 
-This is mostly a list of tasks for myself.  
+Basically password stuff because this is a public repo.  So this is mostly a
+list of tasks for myself:
 
     adduser eric
     passwd
@@ -49,3 +45,4 @@ This is mostly a list of tasks for myself.
     # add new public key to github:    https://github.com/settings/ssh
     # add new public key to bitbucket: https://bitbucket.org/account/user/kablamo/ssh-keys/
 
+    # create /etc/exim4/passwd.client
