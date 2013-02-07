@@ -8,12 +8,12 @@ class exim {
         mode   => '0644',
         source => "${files}/etc/exim4/update-exim4.conf.conf",
     }
-    file { '/etc/exim4/router/350_exim4-config_domain_redirect':
+    file { '/etc/exim4/conf.d/router/350_exim4-config_domain_redirect':
         ensure => 'file',
         owner  => 'root',
         group  => 'root',
         mode   => '0644',
-        source => "${files}/etc/exim4/router/350_exim4-config_domain_redirect",
+        source => "${files}/etc/exim4/conf.d/router/350_exim4-config_domain_redirect",
     }
 
     package { exim4: ensure => $ensure }
