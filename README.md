@@ -46,3 +46,5 @@ list of tasks for myself:
     # add new public key to bitbucket: https://bitbucket.org/account/user/kablamo/ssh-keys/
 
     # create /etc/exim4/passwd.client
+    # edit   /etc/exim4/router/350_exim4-config_domain_redirect and add an
+    #        email address
