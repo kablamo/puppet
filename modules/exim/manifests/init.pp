@@ -16,6 +16,7 @@ class exim {
 #    }
 
     package { exim4: ensure => $ensure }
+    package { mailutils: ensure => $ensure }
     service { exim4_service: 
         name     => 'exim4',
         enable   => true,
