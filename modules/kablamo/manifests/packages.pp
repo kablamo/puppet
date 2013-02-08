@@ -1,5 +1,6 @@
 class kablamo::packages ($ensure = 'latest') {
     package { atop:               ensure => $ensure }
+    package { ack-grep:           ensure => $ensure } # for root
     package { build-essential:    ensure => $ensure }
     package { curl:               ensure => $ensure }
     package { ctags:              ensure => $ensure }
