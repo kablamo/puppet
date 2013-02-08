@@ -15,11 +15,11 @@ class dovecot {
     #    source => "${files}/etc/dovecot/dovecot.conf",
     #}
 
-    package { dovecot: ensure => 'present' }
+    package { dovecot-pop3d: ensure => 'present' }
     service { dovecot_service: 
         name     => 'dovecot',
         enable   => true,
         ensure   => true, 
-        require  => Package["dovecot"],
+        require  => Package["dovecot-pop3d"],
     }
 }
