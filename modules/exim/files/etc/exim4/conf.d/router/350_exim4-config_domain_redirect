@@ -1,4 +1,0 @@
-domain_redirect:
-   driver = redirect
-   domains = +local_domains
-   data = BOOP@example.com
