@@ -1,6 +1,13 @@
 class exim {
     $files="${settings::confdir}/modules/exim/files"
 
+    file { '/etc/mailname':
+        ensure => 'file',
+        owner  => 'root',
+        group  => 'root',
+        mode   => '0644',
+        source => "${files}/etc/mailname",
+    }
     file { '/etc/exim4':
         ensure => 'directory',
         owner  => 'root',
