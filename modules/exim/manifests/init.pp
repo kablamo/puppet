@@ -1,6 +1,12 @@
 class exim {
     $files="${settings::confdir}/modules/exim/files"
 
+    file { '/etc/exim4':
+        ensure => 'directory',
+        owner  => 'root',
+        group  => 'root',
+        mode   => '0755',
+    }
     file { '/etc/exim4/update-exim4.conf.conf':
         ensure => 'file',
         owner  => 'root',
