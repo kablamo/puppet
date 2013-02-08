@@ -14,6 +14,13 @@ class exim {
         group  => 'root',
         mode   => '0755',
     }
+    file { '/etc/exim4/conf.d/router/350_exim4-config_catchall':
+        ensure => 'file',
+        owner  => 'root',
+        group  => 'root',
+        mode   => '0644',
+        source => "${files}/etc/exim4/conf.d/router/350_exim4-config_catchall",
+    }
     file { '/etc/exim4/update-exim4.conf.conf':
         ensure => 'file',
         owner  => 'root',
