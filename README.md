@@ -31,8 +31,8 @@ have an alias setup for it in my .bashrc.
 What it does not do
 -------------------
 
-Basically password stuff because this is a public repo.  So this is mostly a
-list of tasks for myself:
+Basically this dosn't do password stuff because this is a public repo.  So this
+is really a list of manual tasks for myself:
 
     adduser eric
     passwd
