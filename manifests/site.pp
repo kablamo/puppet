@@ -3,6 +3,7 @@ node eric, 'kablamo.xen.prgmr.com' {
     include varnish
     include exim
     include dovecot
+    include perlbal
 }
 node default {
     include kablamo
