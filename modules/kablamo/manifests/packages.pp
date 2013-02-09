@@ -11,6 +11,7 @@ class kablamo::packages ($ensure = 'latest') {
     package { libreadline-dev:    ensure => $ensure } # Term::ReadLine::Gnu
     package { libssl-dev:         ensure => $ensure }
     package { libxml2-dev:        ensure => $ensure } # XML::Parser
+    package { lynx:               ensure => $ensure }
     package { locate:             ensure => $ensure }
     package { mtr:                ensure => $ensure }
     package { nano:               ensure => absent  }
