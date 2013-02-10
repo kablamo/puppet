@@ -29,8 +29,8 @@ class exim {
         source => "${files}/etc/exim4/update-exim4.conf.conf",
     }
 
-    package { exim4: ensure => $ensure }
-    package { mailutils: ensure => $ensure }
+    package { exim4:     ensure => 'present' }
+    package { mailutils: ensure => 'present' }
     service { exim4_service: 
         name     => 'exim4',
         enable   => true,
