@@ -67,6 +67,7 @@ class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'Plack::Middleware::Assets':           ensure => $ensure }
     cpanm { 'Plack::Middleware::Deflater':         ensure => $ensure }
     cpanm { 'Pod::Cpandoc':                        ensure => $ensure }
+    cpanm { 'Pod::Weaver::PluginBundle::FLORA':    ensure => $ensure }
     cpanm { 'Regexp::Common':                      ensure => $ensure }
     cpanm { 'Server::Starter':                     ensure => $ensure }
     cpanm { 'Syntax::Keyword::Junction':           ensure => $ensure }
