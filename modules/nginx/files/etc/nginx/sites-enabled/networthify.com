@@ -15,8 +15,7 @@ server {
 	ssl_certificate /home/eric/ssl/bundle.pem;
 	ssl_certificate_key /home/eric/ssl/ssl.key;
 	ssl_session_timeout 10m;
-	ssl_protocols SSLv3 TLSv1;
-	ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv3:+EXP;
+	ssl_ciphers RC4:HIGH:!aNULL:!MD5;
 	ssl_prefer_server_ciphers on;
 
 	location / { proxy_pass http://127.0.0.1:10002; }
