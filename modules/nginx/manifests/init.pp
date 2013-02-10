@@ -29,7 +29,7 @@ class nginx {
         source => "${files}/etc/nginx/sites-enabled/iijo.org",
     }
 
-    package { nginx:  }
+    package { nginx:  ensure => 'present'}
     service { nginx_service: 
         name     => 'nginx',
         enable   => true,
