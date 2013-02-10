@@ -20,6 +20,7 @@ class kablamo::packages ($ensure = 'latest') {
     package { sqlite3:            ensure => $ensure }
     package { sshfs:              ensure => $ensure }
     package { telnet:             ensure => $ensure }
+    package { tcpdump:            ensure => $ensure }
     package { tmux:               ensure => $ensure }
     package { vim-nox:            ensure => $ensure }
     package { wget:               ensure => $ensure }
