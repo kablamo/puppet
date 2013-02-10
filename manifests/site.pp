@@ -1,9 +1,8 @@
-node eric, 'kablamo.xen.prgmr.com' {
+node 'kablamo.xen.prgmr.com' {
     include kablamo
-    include varnish
     include exim
     include dovecot
-    include perlbal
+    include nginx
 }
 node default {
     include kablamo
