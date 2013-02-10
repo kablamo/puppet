@@ -7,6 +7,7 @@ define cpanm (
                        regsubst("${kablamo::perl_locallib}/lib/perl5/x86_64-linux/${title}.pm", "::", "/", 'G'), 
                        regsubst("${kablamo::perl_locallib}/lib/5.16.2/${title}.pm", "::", "/", 'G'), 
                        regsubst("${kablamo::perl_locallib}/lib/5.16.2/i686-linux/${title}.pm", "::", "/", 'G'), 
+                       regsubst("${kablamo::perl_locallib}/lib/5.16.2/x86_64-linux/${title}.pm", "::", "/", 'G'), 
                      ],
         default   => '/asdfaevdsdfdfevevdf923',
     }
