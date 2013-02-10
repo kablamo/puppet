@@ -32,6 +32,7 @@ class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'DateTime':                            ensure => $ensure }
     cpanm { 'DateTime::Format::Natural':           ensure => $ensure }
     cpanm { 'DateTime::Format::SQLite':            ensure => $ensure }
+    cpanm { 'Devel::Loaded':                       ensure => $ensure }
     cpanm { 'Devel::REPL':                         ensure => $ensure }
     cpanm { 'Devel::REPL::Plugin::DataPrinter':    ensure => $ensure } # Devel::REPL
     cpanm { 'Dist::Zilla':                         ensure => $ensure }
@@ -81,5 +82,4 @@ class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'Vi::QuickFix':                        ensure => $ensure }
     cpanm { 'WWW::Mechanize':                      ensure => $ensure }
     cpanm { 'YAML::XS':                            ensure => $ensure }
-    cpanm { 'pmtools':                             ensure => $ensure }
 }
