@@ -7,6 +7,7 @@ class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'App::cpanoutdated':                   ensure => $ensure }
     cpanm { 'App::mymeta_requires':                ensure => $ensure }
     cpanm { 'App::perlfind':                       ensure => $ensure }
+    cpanm { 'Archive::Tar::Wrapper':               ensure => $ensure } # Dzil
     cpanm { 'Authen::Passphrase':                  ensure => $ensure }
     cpanm { 'Bundle::LWP':                         ensure => $ensure }
     cpanm { 'CEDict::Pinyin':                      ensure => $ensure }
