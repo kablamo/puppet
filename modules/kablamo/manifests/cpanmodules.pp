@@ -1,6 +1,8 @@
 class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'App::Ack':                            ensure => $ensure }
     cpanm { 'App::Genpass':                        ensure => $ensure }
+    cpanm { 'App::Git::Ribbon':                    ensure => $ensure }
+    cpanm { 'App::Git::Spark':                     ensure => $ensure }
     cpanm { 'App::Uni':                            ensure => $ensure }
     cpanm { 'App::cpanoutdated':                   ensure => $ensure }
     cpanm { 'App::mymeta_requires':                ensure => $ensure }
@@ -75,6 +77,7 @@ class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'Term::ReadKey':                       ensure => $ensure }
     cpanm { 'Term::ReadLine::Gnu':                 ensure => $ensure } # Devel::REPL
     cpanm { 'Test::Most':                          ensure => $ensure }
+    cpanm { 'Test::Perl::Critic':                  ensure => $ensure } # Dist::Zilla
     cpanm { 'Test::Routine':                       ensure => $ensure }
     cpanm { 'Text::CSV':                           ensure => $ensure }
     cpanm { 'Time::HiRes':                         ensure => $ensure }
