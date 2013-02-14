@@ -20,6 +20,7 @@ class kablamo::packages ($ensure = 'latest') {
     package { mtr:                ensure => $ensure }
     package { nano:               ensure => absent  }
     package { ntp:                ensure => $ensure }
+    package { python-boto:        ensure => $ensure } # duplicity
     package { python-paramiko:    ensure => $ensure } # duplicity
     package { sqlite3-doc:        ensure => $ensure }
     package { sqlite3:            ensure => $ensure }
