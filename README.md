@@ -8,9 +8,9 @@ I get a new Ubuntu box that I need to setup.
 What it does
 ------------
 
- - Installs some Ubuntu packages.
- - Make sure $USER is in the sudo group and the shell is /bin/bash
- - Put my public key in .ssh/authorized_keys
+ - Installs Ubuntu packages.
+ - Makes sure $USER is in the sudo group and the shell is /bin/bash
+ - Puts my public key in .ssh/authorized_keys
  - Installs my dotfiles (https://github.com/kablamo/dotfiles).
  - Installs Perlbrew
  - Installs cpanm
