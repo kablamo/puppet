@@ -48,7 +48,10 @@ So this is a list of password type tasks for myself to remember to do manually:
 
     # copy/create ssl keys. for dovecot and nginx.
 
-    # for networthify backups:
-    # create ~/.gnupg/config: gpg --list-keys 
-    #              copy keys: scp ~/.gnupg/*ring.gpg newhost:~/.gnupg/
+    # setup gpg keys for networthify backups:
+    # gpg --export-secret-key -a "Eric D Johnson" > private.key # export key
+    # scp private.key eric@newhost:/home/eric/                  # scp    key
+    # gpg --list-keys                                           # create ~/.gnupg/config
+    # gpg --allow-secret-key-import --import ~/private.key      # import keys
+    # gpg --edit-key nnnnnn                                     # edit key and type 'trust'
 
