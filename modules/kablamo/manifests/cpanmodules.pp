@@ -38,6 +38,7 @@ class kablamo::cpanmodules ($ensure='present') {
     cpanm { 'Devel::Loaded':                       ensure => $ensure }
     cpanm { 'Devel::REPL':                         ensure => $ensure }
     cpanm { 'Devel::REPL::Plugin::DataPrinter':    ensure => $ensure } # Devel::REPL
+    cpanm { 'Devel::REPL::Script':                 ensure => $ensure } # Devel::REPL
     cpanm { 'Dist::Zilla':                         ensure => $ensure }
     cpanm { 'Dist::Zilla::PluginBundle::DAGOLDEN': ensure => $ensure }
     cpanm { 'Fey':                                 ensure => $ensure }
