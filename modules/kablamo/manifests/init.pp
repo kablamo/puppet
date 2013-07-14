@@ -5,7 +5,7 @@ class kablamo {
     $home          = "/home/${user}"
     $perlbrew_root = "${home}/perl5/perlbrew"
     $perl_version  = '5.16.3'
-    $perl_locallib = "${perlbrew_root}/perls/perl-${perl_version}"
+    $perl_lib      = "${perlbrew_root}/perls/perl-${perl_version}"
 
     # do stuff
     class { user: }->
